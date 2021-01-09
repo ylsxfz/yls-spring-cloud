@@ -1,0 +1,7 @@
+server:
+  port: 8620
+spring:
+  devtools:
+    livereload:
+      ## 屏蔽热部署端口冲突出现的{Unable to start LiveReload server}警告
+      port: 35730

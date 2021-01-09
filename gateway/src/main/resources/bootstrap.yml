@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 76c1d3a3-332d-425d-9d14-e0dff34114fc
+        ## 注册中心配置
+        extension-configs:
+          data-id: discovery.yml
+          group: common
+          refresh: true

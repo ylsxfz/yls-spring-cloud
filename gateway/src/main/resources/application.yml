@@ -1,0 +1,25 @@
+server:
+  port: 8601
+spring:
+  devtools:
+    livereload:
+      ## 屏蔽热部署端口冲突出现的{Unable to start LiveReload server}警告
+      port: 35729
+
+  cloud:
+    nacos:
+      discovery:
+        ## 自己不注册到nacos
+        register-enabled: false
+
+
+    gateway:
+      discovery:
+        locator:
+          ## 开启从注册中心动态创建路由的功能，利用微服务名称进行路由
+          enabled: true
+      routes:
+        - id: consumer-openfeign
+          uri: lb://consumer-openfeign
+          predicates:
+            - Path=/consumer/*

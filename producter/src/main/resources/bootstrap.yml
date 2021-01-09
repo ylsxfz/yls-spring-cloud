@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: producter
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 76c1d3a3-332d-425d-9d14-e0dff34114fc
+        ## config - 【注册中心】配置
+        extension-configs[0]:
+          data-id: discovery.yml
+          group: common
+          refresh: true
+
+        ## sentinel - 服务降级】配置
+        extension-configs[1]:
+          data-id: sentinel.yml
+          group: common
+          refresh: true
+
+        ## sleuth 配置
+        extension-configs[2]:
+          data-id: sleuth.yml
+          group: common
+          refresh: true
